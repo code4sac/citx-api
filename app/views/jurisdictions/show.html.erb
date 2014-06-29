@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Government:</strong>
+  <%= @jurisdiction.government %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @jurisdiction.type %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @jurisdiction.description %>
+</p>
+
+<%= link_to 'Edit', edit_jurisdiction_path(@jurisdiction) %> |
+<%= link_to 'Back', jurisdictions_path %>

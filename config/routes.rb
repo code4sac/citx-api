@@ -1,4 +1,6 @@
 CitxApi::Application.routes.draw do
+  resources :jurisdictions
+
   resources :geographies
 
   resources :organizations
