@@ -1,4 +1,6 @@
 CitxApi::Application.routes.draw do
+  resources :geographies
+
   resources :organizations
 
   resources :indicators
