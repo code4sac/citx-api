@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @program.project %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @program.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @program.description %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @program.url %>
+</p>
+
+<p>
+  <strong>Leader name:</strong>
+  <%= @program.leader_name %>
+</p>
+
+<p>
+  <strong>Leader title:</strong>
+  <%= @program.leader_title %>
+</p>
+
+<%= link_to 'Edit', edit_program_path(@program) %> |
+<%= link_to 'Back', programs_path %>
