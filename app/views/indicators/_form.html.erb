@@ -1,33 +1,24 @@
-<%= form_for(@indicator) do |f| %>
-  <% if @indicator.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@indicator.errors.count, "error") %> prohibited this indicator from being saved:</h2>
+<%= form_for @indicator, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <%= f.text_field :name, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <%= f.text_area :description, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :source, :class => 'control-label' %>
+    <%= f.text_field :source, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :source_url, :class => 'control-label' %>
+    <%= f.text_field :source_url, :class => 'form-control' %>
+  </div>
 
-      <ul>
-      <% @indicator.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :source %><br>
-    <%= f.text_field :source %>
-  </div>
-  <div class="field">
-    <%= f.label :source_url %><br>
-    <%= f.text_field :source_url %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                indicators_path, :class => 'btn' %>
   </div>
 <% end %>

@@ -1,41 +1,32 @@
-<%= form_for(@program) do |f| %>
-  <% if @program.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@program.errors.count, "error") %> prohibited this program from being saved:</h2>
+<%= form_for @program, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="form-group">
+    <%= f.label :project, :class => 'control-label' %>
+    <%= f.check_box :project, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <%= f.text_field :name, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <%= f.text_area :description, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :url, :class => 'control-label' %>
+    <%= f.text_field :url, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :leader_name, :class => 'control-label' %>
+    <%= f.text_field :leader_name, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :leader_title, :class => 'control-label' %>
+    <%= f.text_field :leader_title, :class => 'form-control' %>
+  </div>
 
-      <ul>
-      <% @program.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :project %><br>
-    <%= f.check_box :project %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
-  </div>
-  <div class="field">
-    <%= f.label :leader_name %><br>
-    <%= f.text_field :leader_name %>
-  </div>
-  <div class="field">
-    <%= f.label :leader_title %><br>
-    <%= f.text_field :leader_title %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                programs_path, :class => 'btn' %>
   </div>
 <% end %>

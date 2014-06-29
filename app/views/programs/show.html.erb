@@ -1,34 +1,31 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Program -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <strong>Project:</strong>
-  <%= @program.project %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:project) %>:</strong></dt>
+  <dd><%= @program.project %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @program.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @program.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:url) %>:</strong></dt>
+  <dd><%= @program.url %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:leader_name) %>:</strong></dt>
+  <dd><%= @program.leader_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:leader_title) %>:</strong></dt>
+  <dd><%= @program.leader_title %></dd>
+</dl>
 
-<p>
-  <strong>Name:</strong>
-  <%= @program.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @program.description %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @program.url %>
-</p>
-
-<p>
-  <strong>Leader name:</strong>
-  <%= @program.leader_name %>
-</p>
-
-<p>
-  <strong>Leader title:</strong>
-  <%= @program.leader_title %>
-</p>
-
-<%= link_to 'Edit', edit_program_path(@program) %> |
-<%= link_to 'Back', programs_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              programs_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_program_path(@program), :class => 'btn btn-primary' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              program_path(@program),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
