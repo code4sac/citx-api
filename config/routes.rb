@@ -1,4 +1,6 @@
 CitxApi::Application.routes.draw do
+  resources :goals
+
   resources :topics
 
   resources :categories
