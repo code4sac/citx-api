@@ -6,7 +6,6 @@ gem 'rails', '~> 4.1.2'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -35,6 +34,12 @@ gem "therubyracer" # See https://github.com/sstephenson/execjs#readme for more s
 gem "less-rails" # Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 
 # gem "twitter-bootstrap-rails"
+
+# Use Twitter Bootstrap CSS & JavaScript toolkit
+gem 'twitter-bootswatch-rails', '~> 3.2.0'
+
+# Use Twitter Bootstrap helpers gem, e.g., alerts etc...
+gem 'twitter-bootswatch-rails-helpers'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
