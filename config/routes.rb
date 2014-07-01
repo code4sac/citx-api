@@ -1,4 +1,6 @@
 CitxApi::Application.routes.draw do
+  resources :services
+
   root to: 'pages#index'
 
   resources :programs
