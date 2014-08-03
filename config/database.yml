@@ -19,7 +19,7 @@ development:
   encoding: unicode
   database: citx-api_development
   pool: 5
-  # username: 
+  # username:
   # password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -48,13 +48,13 @@ test:
   encoding: unicode
   database: citx-api_test
   pool: 5
-  # username: 
+  # username:
   # password:
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  database: citx-api_production
-  pool: 5
-  # username: 
-  # password:
+  <<: *default
+  database: <%= ENV[‘RDS_DB_NAME’] %>
+  username: <%= ENV[‘RDS_USERNAME’] %>
+  password: <%= ENV[‘RDS_PASSWORD’] %>
+  host: <%= ENV[‘RDS_HOSTNAME’] %>
+  port: <%= ENV[‘RDS_PORT’] %>
