@@ -2,7 +2,7 @@
 lock '3.1.0'
 
 set :application, 'citx-api'
-set :repo_url, 'git@example.com:publicinnovation/citx-api.git'
+set :repo_url, 'git@github.com:publicinnovation/citx-api.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
