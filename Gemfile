@@ -52,3 +52,6 @@ gem 'twitter-bootswatch-rails-helpers'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Heroku dependencies
+gem 'rails_12factor', group: :production
